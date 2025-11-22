@@ -26,7 +26,7 @@ for predictor in "incn1cn1"; do
 
 # python NeighborOverlap.py --xdp 0.7 --tdp 0.7 --pt 0.75 --gnnedp 0.0 --preedp 0.4 --predp 0.05 --gnndp 0.35  --probscale 4.3 --proboffset 2.8 --alpha 1.0  --gnnlr 0.0043 --prelr 0.0024  --batch_size 1152  --ln --lnnn --predictor $predictor --epochs 100 --model puregcn --hiddim 256 --mplayers 1  --testbs 8192  --maskinput  --jk  --use_xlin  --tailact --runs 3 --dataset wikidata5k_multiclass --multiclass
 
-python NeighborOverlap.py --xdp 0.7 --tdp 0.7 --pt 0.75 --gnnedp 0.0 --preedp 0.4 --predp 0.05 --gnndp 0.35  --probscale 4.3 --proboffset 2.8 --alpha 1.0  --gnnlr 0.0043 --prelr 0.0024  --batch_size 1152  --ln --lnnn --predictor $predictor --epochs 100 --model puregcn --hiddim 256 --mplayers 1  --testbs 8192  --maskinput  --jk  --use_xlin  --tailact --runs 3 --dataset wikidata10k_multiclass --multiclass
+# python NeighborOverlap.py --xdp 0.7 --tdp 0.7 --pt 0.75 --gnnedp 0.0 --preedp 0.4 --predp 0.05 --gnndp 0.35  --probscale 4.3 --proboffset 2.8 --alpha 1.0  --gnnlr 0.0043 --prelr 0.0024  --batch_size 1152  --ln --lnnn --predictor $predictor --epochs 100 --model puregcn --hiddim 256 --mplayers 1  --testbs 8192  --maskinput  --jk  --use_xlin  --tailact --runs 3 --dataset wikidata10k_multiclass --multiclass
 # python NeighborOverlap.py --xdp 0.7 --tdp 0.7 --pt 0.75 --gnnedp 0.0 --preedp 0.4 --predp 0.05 --gnndp 0.35  --probscale 4.3 --proboffset 2.8 --alpha 1.0  --gnnlr 0.0043 --prelr 0.0024  --batch_size 1152  --ln --lnnn --predictor $predictor --epochs 100 --model puregcn --hiddim 256 --mplayers 1  --testbs 8192  --maskinput  --jk  --use_xlin  --tailact --runs 3 --dataset wikidata10k_multiclass 
 
 done
