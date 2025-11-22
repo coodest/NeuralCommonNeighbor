@@ -648,7 +648,8 @@ def main():
                     train_edge_labels.append(0)
                     add_zero_class = True
             train_edge_labels = torch.tensor(train_edge_labels, dtype=torch.long)
-            context["num_class"] += 1
+            if add_zero_class:
+                context["num_class"] += 1
         else:
             train_edge_labels = torch.ones_like(split_edge['train']['edge'])
         train_edge_labels = train_edge_labels.to(device)
