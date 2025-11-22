@@ -703,6 +703,27 @@ class IncompleteCN1Predictor(CNLinkPredictor):
     def clampprob(self, prob, pt):
         p0 = torch.sigmoid_(self.scale*(prob-self.offset))
         return self.alpha*pt*p0/(pt*p0+1-p0)
+    
+
+
+    # def multidomainforward(self,
+    #                        x,
+    #                        adj,
+    #                        tar_ei,
+    #                        filled1: bool = False,
+    #                        cndropprobs: Iterable[float] = []):
+    #     adj = self.dropadj(adj)
+    #     xi = x[tar_ei[0]]
+    #     xj = x[tar_ei[1]]
+    #     x = x + self.xlin(x)
+    #     cn = adjoverlap(adj, adj, tar_ei, filled1, cnsampledeg=self.cndeg)
+    #     xcns = [spmm_add(cn, x)]
+    #     xij = self.xijlin(xi * xj)
+        
+    #     xs = torch.cat(
+    #         [self.lin(self.xcnlin(xcn) * self.beta + xij) for xcn in xcns],
+    #         dim=-1)
+    #     return xs
 
     def multidomainforward(self,
                            x,
@@ -779,7 +800,7 @@ class IncompleteCN1Predictor(CNLinkPredictor):
             xcns[0] = xcns[0] + xcn2 + xcn1
         
         xij = self.xijlin(xij)
-        
+
         xs = torch.cat(
             [self.lin(self.xcnlin(xcn) * self.beta + xij) for xcn in xcns],
             dim=-1)
